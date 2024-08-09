@@ -3,7 +3,7 @@ ASFLAGS=-f elf64
 
 NAME=libasm.a
 
-SRC=$(addprefix src/, ft_strlen.s)
+SRC=$(addprefix src/, ft_strlen.s ft_strcpy.s)
 OBJ=$(SRC:.s=.o)
 
 .PHONY: all
