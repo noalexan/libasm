@@ -1,28 +1,25 @@
-global ft_strcpy
+section .text
+    global ft_strcpy
 
 ft_strcpy:
     push rbp
-    mov rbp,rsp
-
-    push rax
+    mov rbp, rsp
 
 .loop:
-    mov bl,byte [rdx]
-    mov byte [rax],bl
+    mov bl, byte [rsi]
+    mov byte [rdi], bl
 
-    test bl,bl
+    test bl, bl
     jz .end
 
-    inc rdx
-    inc rax
+    inc rdi
+    inc rsi
 
     jmp .loop
 
 .end:
 
-    pop rax
-
-    mov rsp,rbp
+    mov rsp, rbp
     pop rbp
 
     ret

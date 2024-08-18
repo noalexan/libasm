@@ -1,4 +1,5 @@
-global ft_write
+section .text
+    global ft_write
 
 ft_write:
     mov rax, 0x01

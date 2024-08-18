@@ -1,8 +1,9 @@
-global ft_strcmp
+section .text
+    global ft_strcmp
 
 ft_strcmp:
     push rbp
-    mov rbp,rsp
+    mov rbp, rsp
 
     xor rax, rax
     xor rbx, rbx
@@ -23,7 +24,7 @@ ft_strcmp:
     jmp .loop
 
 .end:
-    mov rsp,rbp
+    mov rsp, rbp
     pop rbp
 
     ret
