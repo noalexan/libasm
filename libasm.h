@@ -1,6 +1,12 @@
 #pragma once
 
 #include <stddef.h>
+#include <unistd.h>
+
+typedef struct s_list {
+	void *data;
+	struct s_list *next;
+} t_list;
 
 size_t  ft_strlen(const char *);
 char   *ft_strcpy(char *dest, const char *src);

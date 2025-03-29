@@ -1,19 +1,15 @@
-section .text
-    global ft_strcmp
+[bits 64]
 
-ft_strcmp:
+section .text
+    global ft_strcpy
+
+ft_strcpy:
     push rbp
     mov rbp, rsp
 
-    xor rax, rax
-    xor rbx, rbx
-
 .loop:
-    mov al, byte [rdi]
     mov bl, byte [rsi]
-
-    sub rax, rbx
-    jnz .end
+    mov byte [rdi], bl
 
     test bl, bl
     jz .end
@@ -24,6 +20,7 @@ ft_strcmp:
     jmp .loop
 
 .end:
+
     mov rsp, rbp
     pop rbp
 

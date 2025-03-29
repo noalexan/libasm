@@ -1,24 +1,29 @@
+NAME=libasm.a
+
 AS=nasm
 ASFLAGS=-f elf64
 
-NAME=libasm.a
-
-SRC=$(addprefix src/, ft_strlen.s ft_strcpy.s ft_strcmp.s ft_write.s ft_read.s ft_strdup.s)
-OBJ=$(SRC:.s=.o)
+OBJ=\
+	ft_strlen.o \
+	ft_strcpy.o \
+	ft_strcmp.o \
+	ft_write.o  \
+	ft_read.o   \
+	ft_strdup.o
 
 .PHONY: all
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(AR) rcs $@ $^
+	$(AR) rcs $@ $(OBJ)
 
 .PHONY: clean
 clean:
-	$(RM) $(OBJ)
+	@$(RM) -v $(OBJ)
 
 .PHONY: fclean
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) -v $(NAME)
 
 .PHONY: re
 re: fclean all
